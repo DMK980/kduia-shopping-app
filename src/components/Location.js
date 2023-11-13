@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Location = () => {
-    const {disptach} = useContext(AppContext);
+    const {dispatch} = useContext(AppContext);
 
     const changeLocation = (val)=>{
-        dispatchEvent({
+        dispatch({
             type: "CHG_LOCATION",
             payload: val
         });

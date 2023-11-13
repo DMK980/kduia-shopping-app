@@ -9,7 +9,7 @@ export const AppReducer = (state, action) => {
             state.expenses.map((expense)=>{
                 if(expense.name === action.payload.name){
                     expense.quantity += action.payload.quantity;
-                    updatedqty = true;
+                    updatedqty = !updatedqty;
                 };
                 new_expenses.push(expense);
                 return true;
@@ -33,7 +33,7 @@ export const AppReducer = (state, action) => {
         
         case "  DELETE_ITEM":
             state.expenses.map((expense)=>{
-                if(expenses.name === action.payload.name){
+                if(expense.name === action.payload.name){
                     expense.quantity = 0;
                 };
                 new_expenses.push(expense);
